@@ -6,9 +6,23 @@ import { Injectable } from "@angular/core";
 })
 export class CourseService {
 
-    retriveAll(): Course[] {
+    retrieveAll(): Course[] {
         return COURSES;
     }
+
+    retrieveById(id: number): Course {
+
+      return COURSES.find((courseiterator: Course) => courseiterator.id === id);
+
+    }
+
+    save(course: Course): void {
+          if(course.id) {
+            const index =  COURSES.find((courseiterator: Course) => courseiterator.id === course.id);
+
+          }
+    }
+
 }
 
 
